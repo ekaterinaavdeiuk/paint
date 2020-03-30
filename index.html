@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint</title>
+    <style>
+        * {
+            outline-color: #434343;
+            border: none;
+        }
+
+        #canvas {
+            width: 1200px;
+            height: 900px;
+            border: 7px solid #7F7B7A;
+            background: #ffffff;
+            border-radius: 3px;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #BFBFBF;
+        }
+
+        .coordinates {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-self: flex-end;
+            color: #434343;
+        }
+
+        .coordinates span {
+            color: #7F7B7A;
+        }
+
+        .tools {
+            display: flex;
+            flex-direction: column;
+            align-self: auto;
+
+        }
+
+        .tool-button {
+            width: 50px;
+            height: 50px;
+            background-position: center;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            border-bottom: 1px solid #7F7B7A;
+            background-color: #D9DDDC;
+            margin-bottom: 10px;
+        }
+
+        #size-select:hover,
+        .tool-button:hover {
+            border: 3px solid #434343;
+        }
+
+        .tool-button:active {
+            border: 3px solid #434343;
+        }
+
+        .select {
+            margin-bottom: 10px;
+        }
+
+        #size-select {
+            display: block;
+            font-size: 12px;
+            font-family: sans-serif;
+            font-weight: 300;
+            background: #D9DDDC;
+            border: 3px solid transparent;;
+        }
+
+        #brush {
+            background-image: url("img/paintbrush.png");
+        }
+
+        #pen {
+            background-image: url("img/pen.png");
+        }
+
+        #eraser {
+            background-image: url("img/eraser.png");
+        }
+
+        #clear-all {
+            background-image: url("img/delete-cross.png");
+        }
+
+        #heart-stamp {
+            background-image: url("img/heart.png");
+        }
+
+        #smile-stamp {
+            background-image: url("img/smiley.png");
+        }
+
+        #rect-line {
+            background-image: url("img/square.png");
+        }
+
+        #circle-line {
+            background-image: url("img/circle.png");
+        }
+    </style>
+</head>
+<body>
+<div class="canvas">
+    <canvas id="canvas" width="1200" height="900"></canvas>
+</div>
+<div class="tools">
+    <div class="tools-buttons">
+        <button class="tool-button" id="brush"></button>
+        <button class="tool-button" id="pen"></button>
+        <button class="tool-button" id="eraser"></button>
+        <button class="tool-button" id="heart-stamp"></button>
+        <button class="tool-button" id="smile-stamp"></button>
+        <button class="tool-button" id="rect-line"></button>
+        <button class="tool-button" id="circle-line"></button>
+        <button class="tool-button" id="clear-all"></button>
+    </div>
+    <div class="select">
+        <select id="size-select">
+            <option>Size</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+            <option>100</option>
+        </select>
+    </div>
+    <div class="color-input"><input type="color" id="color"></div>
+
+</div>
+<div class="coordinates">
+    <p id="x"><b>x: </b><span id="xCoordinate"></span></p>
+    <p id="y"><b>y: </b><span id="yCoordinate"></span></p>
+</div>
+
+<script src="paint.js"></script>
+</body>
+</html>
